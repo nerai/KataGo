@@ -83,3 +83,9 @@ for_release/
 
 tests/results/matchsgfs/
 tests/results/matchsgfs2/
+cpp/katago.dir
+cpp/x64
+*.vcxproj
+*.filters
+cpp/katago.vcxproj.user
+cpp/katago.sln
