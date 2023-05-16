@@ -89,3 +89,4 @@ cpp/x64
 *.filters
 cpp/katago.vcxproj.user
 cpp/katago.sln
+cpp/Debug
