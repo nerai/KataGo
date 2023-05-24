@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7349AE9D-801E-3497-BD75-CCF3A16BDBCE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>katago</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.1.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\! HPC\KataGo (original)\cpp\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">katago.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">katago</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\! HPC\KataGo (original)\cpp\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">katago.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">katago</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\! HPC\KataGo (original)\cpp\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">katago.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">katago</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\! HPC\KataGo (original)\cpp\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">katago.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">katago</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/! HPC/KataGo (original)/cpp/external/filesystem-1.5.8/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.1/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;__FMA__;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
+      <Defines>%(Defines);USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="Debug"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler="-Zi -Ob0"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>Od</Optimization>
+      <Runtime>MDd</Runtime>
+      <RuntimeChecks>RTC1</RuntimeChecks>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cudnn.lib;C:\dev_bin\zlib\build-VS2022\x64\Release\libz.lib;C:\dev_bin\libzip\libzip-win-build\build-VS2022\x64\Release\libzip.lib;ws2_32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublasLt.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/! HPC/KataGo (original)/cpp/Debug/katago.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/! HPC/KataGo (original)/cpp/Debug/katago.pdb</ProgramDataBaseFile>
+      <StackReserveSize>8388608</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/! HPC/KataGo (original)/cpp/external/filesystem-1.5.8/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.1/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
+      <Defines>%(Defines);NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="Release"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler=-Ob2</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cudnn.lib;C:\dev_bin\zlib\build-VS2022\x64\Release\libz.lib;C:\dev_bin\libzip\libzip-win-build\build-VS2022\x64\Release\libzip.lib;ws2_32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublasLt.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/! HPC/KataGo (original)/cpp/Release/katago.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/! HPC/KataGo (original)/cpp/Release/katago.pdb</ProgramDataBaseFile>
+      <StackReserveSize>8388608</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/! HPC/KataGo (original)/cpp/external/filesystem-1.5.8/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.1/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
+      <Defines>%(Defines);NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="MinSizeRel"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler=-Ob1</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O1</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cudnn.lib;C:\dev_bin\zlib\build-VS2022\x64\Release\libz.lib;C:\dev_bin\libzip\libzip-win-build\build-VS2022\x64\Release\libzip.lib;ws2_32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublasLt.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/! HPC/KataGo (original)/cpp/MinSizeRel/katago.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/! HPC/KataGo (original)/cpp/MinSizeRel/katago.pdb</ProgramDataBaseFile>
+      <StackReserveSize>8388608</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/! HPC/KataGo (original)/cpp/external/filesystem-1.5.8/include" /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.1/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;__FMA__;NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
+      <Defines>%(Defines);NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="RelWithDebInfo"</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler="-Zi -Ob1"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cudnn.lib;C:\dev_bin\zlib\build-VS2022\x64\Release\libz.lib;C:\dev_bin\libzip\libzip-win-build\build-VS2022\x64\Release\libzip.lib;ws2_32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cublasLt.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/! HPC/KataGo (original)/cpp/RelWithDebInfo/katago.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/! HPC/KataGo (original)/cpp/RelWithDebInfo/katago.pdb</ProgramDataBaseFile>
+      <StackReserveSize>8388608</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\! HPC\KataGo (original)\cpp\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/! HPC/KataGo (original)/cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\dev_bin\CMake\bin\cmake.exe "-SD:/! HPC/KataGo (original)/cpp" "-BD:/! HPC/KataGo (original)/cpp" --check-stamp-file "D:/! HPC/KataGo (original)/cpp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCUDAInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindCUDAToolkit.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindZLIB.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\SelectLibraryConfigurations.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCUDACompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCXXCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeRCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\! HPC\KataGo (original)\cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/! HPC/KataGo (original)/cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\dev_bin\CMake\bin\cmake.exe "-SD:/! HPC/KataGo (original)/cpp" "-BD:/! HPC/KataGo (original)/cpp" --check-stamp-file "D:/! HPC/KataGo (original)/cpp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCUDAInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindCUDAToolkit.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindZLIB.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\SelectLibraryConfigurations.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCUDACompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCXXCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeRCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\! HPC\KataGo (original)\cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/! HPC/KataGo (original)/cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\dev_bin\CMake\bin\cmake.exe "-SD:/! HPC/KataGo (original)/cpp" "-BD:/! HPC/KataGo (original)/cpp" --check-stamp-file "D:/! HPC/KataGo (original)/cpp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCUDAInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindCUDAToolkit.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindZLIB.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\SelectLibraryConfigurations.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCUDACompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCXXCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeRCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\! HPC\KataGo (original)\cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/! HPC/KataGo (original)/cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\dev_bin\CMake\bin\cmake.exe "-SD:/! HPC/KataGo (original)/cpp" "-BD:/! HPC/KataGo (original)/cpp" --check-stamp-file "D:/! HPC/KataGo (original)/cpp/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCUDAInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindCUDAToolkit.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\FindZLIB.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\dev_bin\CMake\share\cmake-3.25\Modules\SelectLibraryConfigurations.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCUDACompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeCXXCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeRCCompiler.cmake;D:\! HPC\KataGo (original)\cpp\CMakeFiles\3.25.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\! HPC\KataGo (original)\cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\global.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\base64.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\bsearch.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\commandloop.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\config_parser.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\datetime.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\elo.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\fancymath.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\fileutils.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\hash.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\logger.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\mainargs.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\makedir.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\md5.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\multithread.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\rand.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\rand_helpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\sha2.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\test.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\threadsafecounter.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\threadsafequeue.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\threadtest.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\core\timer.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\game\board.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\game\rules.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\game\boardhistory.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\game\graphhash.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\sgf.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\numpywrite.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\poswriter.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\trainingwrite.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\loadmodel.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\homedata.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\dataio\files.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\neuralnet\nninputs.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\neuralnet\modelversion.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\neuralnet\nneval.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\neuralnet\desc.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\neuralnet\cudabackend.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\neuralnet\cudautils.cpp" />
+    <CudaCompile Include="neuralnet\cudahelpers.cu" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\book\book.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\book\bookcssjs.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\timecontrols.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchparams.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\mutexpool.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\search.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchnode.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchresults.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchhelpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchexplorehelpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchmirror.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchmultithreadhelpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchnnhelpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchtimehelpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchupdatehelpers.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\asyncbot.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\distributiontable.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\localpattern.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\searchnodetable.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\subtreevaluebiastable.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\patternbonustable.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\analysisdata.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\search\reportedsearchvalues.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\program\gtpconfig.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\program\setup.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\program\playutils.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\program\playsettings.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\program\play.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\program\selfplaymanager.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testboardarea.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testboardbasic.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testbook.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testcommon.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testconfig.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testmisc.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testnnevalcanary.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testrules.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testscore.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsgf.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsymmetries.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testnninputs.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testownership.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearchcommon.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearchnonn.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearch.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearchv3.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearchv8.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearchv9.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testsearchmisc.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testtime.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testtrainingwrite.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\testnn.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\tinymodel.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\tests\tinymodeldata.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\distributed\client.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\commandline.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\analysis.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\benchmark.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\contribute.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\evalsgf.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\gatekeeper.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\genbook.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\gputest.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\gtp.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\match.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\matchauto.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\misc.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\runtests.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\sandbox.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\selfplay.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\command\tune.cpp" />
+    <ClCompile Include="D:\! HPC\KataGo (original)\cpp\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\! HPC\KataGo (original)\cpp\ZERO_CHECK.vcxproj">
+      <Project>{5DB7CEF4-493A-36BC-9C8B-C3FAC4C86EFA}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.1.targets" />
+  </ImportGroup>
+</Project>
