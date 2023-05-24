@@ -177,12 +177,12 @@ int main(int argc, const char* const* argv) {
   if(args.size() < 2) {
     //printHelp(args);
     //return 0;
-      std::cout << "CWD: " << std::filesystem::current_path() << "\n";
+      std::cerr << "CWD: " << std::filesystem::current_path() << "\n";
       args.push_back("benchmark");
       args.push_back("-model");
-      args.push_back("../../../KataGo2/default_model.bin.gz");
+      args.push_back("../../KataGo2/default_model.bin.gz");
       args.push_back("-config");
-      args.push_back("../configs/gtp_example.cfg");
+      args.push_back("configs/gtp_example.cfg");
   }
   string cmdArg = string(args[1]);
   if(cmdArg == "-h" || cmdArg == "--h" || cmdArg == "-help" || cmdArg == "--help" || cmdArg == "help") {
