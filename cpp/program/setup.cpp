@@ -301,6 +301,10 @@ vector<NNEvaluator*> Setup::initializeNNEvaluators(
     else {
       nnMaxBatchSize = cfg.getInt("nnMaxBatchSize", 1, 65536);
     }
+
+    // HACK: fixed to 100 to be comparable with MTH version
+    std::cerr << "FIX: nnMaxBatchSize = 100\n";
+    nnMaxBatchSize = 100;
 #else
     //Large batches don't really help CPUs the way they do GPUs because a single CPU on its own is single-threaded
     //and doesn't greatly benefit from having a bigger chunk of parallelizable work to do on the large scale.
