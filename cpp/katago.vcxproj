@@ -112,7 +112,7 @@
     <CudaCompile>
       <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
       <Defines>%(Defines);USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="Debug"</Defines>
-      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler="-Zi -Ob0"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++17 -Xcompiler="-Zi -Ob0"</AdditionalOptions>
       <CodeGeneration></CodeGeneration>
       <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
       <CudaRuntime>Static</CudaRuntime>
@@ -159,7 +159,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -177,7 +177,7 @@
     <CudaCompile>
       <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
       <Defines>%(Defines);NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="Release"</Defines>
-      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler=-Ob2</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++17 -Xcompiler=-Ob2</AdditionalOptions>
       <CodeGeneration></CodeGeneration>
       <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
       <CudaRuntime>Static</CudaRuntime>
@@ -223,7 +223,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -241,7 +241,7 @@
     <CudaCompile>
       <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
       <Defines>%(Defines);NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="MinSizeRel"</Defines>
-      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler=-Ob1</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++17 -Xcompiler=-Ob1</AdditionalOptions>
       <CodeGeneration></CodeGeneration>
       <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
       <CudaRuntime>Static</CudaRuntime>
@@ -288,7 +288,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -304,7 +304,7 @@
     <CudaCompile>
       <Include>D:\! HPC\KataGo (original)\cpp\external;D:\! HPC\KataGo (original)\cpp\external\tclap-1.2.2\include;C:\dev_bin\Perl\c\include;C:\dev_bin\libzip\libzip-win-build\lib;C:\dev_bin\libzip\libzip-win-build\win32;D:\! HPC\KataGo (original)\cpp;D:\! HPC\KataGo (original)\cpp\external\filesystem-1.5.8\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;%(Include)</Include>
       <Defines>%(Defines);NDEBUG;USE_CUDA_BACKEND;CUDA_TARGET_VERSION=12.1.105;NO_GIT_REVISION;NOMINMAX;BYTE_ORDER=1234;LITTLE_ENDIAN=1234;BIG_ENDIAN=4321;_CRT_SECURE_NO_WARNINGS;USE_AVX2;CMAKE_INTDIR="RelWithDebInfo"</Defines>
-      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++14 -Xcompiler="-Zi -Ob1"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) -Wno-deprecated-gpu-targets --generate-code=arch=compute_50,code=[compute_50,sm_50] --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_53,code=[compute_53,sm_53] --generate-code=arch=compute_60,code=[compute_60,sm_60] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_62,code=[compute_62,sm_62] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_72,code=[compute_72,sm_72] --generate-code=arch=compute_75,code=[compute_75,sm_75] --generate-code=arch=compute_80,code=[compute_80,sm_80] --generate-code=arch=compute_86,code=[compute_86,sm_86] --generate-code=arch=compute_87,code=[compute_87,sm_87] --generate-code=arch=compute_90,code=[compute_90,sm_90] -std=c++17 -Xcompiler="-Zi -Ob1"</AdditionalOptions>
       <CodeGeneration></CodeGeneration>
       <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
       <CudaRuntime>Static</CudaRuntime>
