@@ -1063,164 +1063,44 @@ void Search::printTree(ostream& out, const SearchNode* node, PrintTreeOptions op
     data.weightFactor = NAN;
   }
   perspective = (perspective != P_BLACK && perspective != P_WHITE) ? node->nextPla : perspective;
-  printTreeHelper(out, node, options, prefix, 0, 0, data, perspective);
+  std::unordered_set<const SearchNode*> done{};
+  printTreeHelper(out, node, options, prefix, 0, 0, data, perspective, done);
 }
 
 void Search::printTreeHelper(
   ostream& out, const SearchNode* n, const PrintTreeOptions& options,
-  string& prefix, int64_t origVisits, int depth, const AnalysisData& data, Player perspective
+  string& prefix, int64_t origVisits, int depth, const AnalysisData& data, Player perspective,
+    std::unordered_set<const SearchNode*>& done
 ) const {
   if(n == NULL)
     return;
 
   const SearchNode& node = *n;
 
-  Player perspectiveToUse = (perspective != P_BLACK && perspective != P_WHITE) ? n->nextPla : perspective;
-  double perspectiveFactor = perspectiveToUse == P_BLACK ? -1.0 : 1.0;
-
   if(depth == 0)
     origVisits = data.numVisits;
-
-  //Output for this node
-  {
-    out << prefix;
-    char buf[128];
-
-    out << ": ";
-
-    if(data.numVisits > 0) {
-      sprintf(buf,"T %6.2fc ",(perspectiveFactor * data.utility * 100.0));
-      out << buf;
-      sprintf(buf,"W %6.2fc ",(perspectiveFactor * data.resultUtility * 100.0));
-      out << buf;
-      sprintf(buf,"S %6.2fc (%+5.1f L %+5.1f) ",
-              perspectiveFactor * data.scoreUtility * 100.0,
-              perspectiveFactor * data.scoreMean,
-              perspectiveFactor * data.lead
-      );
-      out << buf;
-    }
-
-    // bool hasNNValue = false;
-    // double nnResultValue;
-    // double nnTotalValue;
-    // lock.lock();
-    // if(node.nnOutput != nullptr) {
-    //   nnResultValue = getResultUtilityFromNN(*node.nnOutput);
-    //   nnTotalValue = getUtilityFromNN(*node.nnOutput);
-    //   hasNNValue = true;
-    // }
-    // lock.unlock();
-
-    // if(hasNNValue) {
-    //   sprintf(buf,"VW %6.2fc VS %6.2fc ", nnResultValue * 100.0, (nnTotalValue - nnResultValue) * 100.0);
-    //   out << buf;
-    // }
-    // else {
-    //   sprintf(buf,"VW ---.--c VS ---.--c ");
-    //   out << buf;
-    // }
-
-    if(depth > 0 && !isnan(data.lcb)) {
-      sprintf(buf,"LCB %7.2fc ", perspectiveFactor * data.lcb * 100.0);
-      out << buf;
-    }
-
-    if(!isnan(data.policyPrior)) {
-      sprintf(buf,"P %5.2f%% ", data.policyPrior * 100.0);
-      out << buf;
-    }
-    if(!isnan(data.weightFactor)) {
-      sprintf(buf,"WF %5.1f ", data.weightFactor);
-      out << buf;
-    }
-    if(data.playSelectionValue >= 0 && depth > 0) {
-      sprintf(buf,"PSV %7.0f ", data.playSelectionValue);
-      out << buf;
-    }
-
-    if(options.printSqs_) {
-      sprintf(buf,"SMSQ %5.1f USQ %7.5f W %6.2f WSQ %8.2f ", data.scoreMeanSqAvg, data.utilitySqAvg, data.weightSum, data.weightSqSum);
-      out << buf;
-    }
-
-    if(options.printAvgShorttermError_) {
-      std::pair<double,double> wlAndScoreError = getShallowAverageShorttermWLAndScoreError(&node);
-      sprintf(buf,"STWL %6.2fc STS %5.1f ", wlAndScoreError.first * 100.0, wlAndScoreError.second);
-      out << buf;
-    }
-
-    sprintf(buf,"N %7" PRIu64 "  --  ", data.numVisits);
-    out << buf;
-
-    printPV(out, data.pv);
-    out << endl;
-  }
-
-  if(depth >= options.branch_.size()) {
-    if(depth >= options.maxDepth_ + options.branch_.size())
-      return;
-    if(data.numVisits < options.minVisitsToExpand_)
-      return;
-    if((double)data.numVisits < origVisits * options.minVisitsPropToExpand_)
-      return;
-  }
-  if((options.alsoBranch_ && depth == 0) || (!options.alsoBranch_ && depth == options.branch_.size())) {
-    out << "---" << PlayerIO::playerToString(node.nextPla) << "(" << (node.nextPla == perspectiveToUse ? "^" : "v") << ")---" << endl;
-  }
 
   vector<AnalysisData> analysisData;
   bool duplicateForSymmetries = false;
   getAnalysisData(node,analysisData,0,true,options.maxPVDepth_,duplicateForSymmetries);
 
   int numChildren = (int)analysisData.size();
-
-  //Apply filtering conditions, but include children that don't match the filtering condition
-  //but where there are children afterward that do, in case we ever use something more complex
-  //than plain visits as a filter criterion. Do this by finding the last child that we want as the threshold.
-  int lastIdxWithEnoughVisits = numChildren-1;
-  while(true) {
-    if(lastIdxWithEnoughVisits <= 0)
-      break;
-
-    int64_t childVisits = analysisData[lastIdxWithEnoughVisits].numVisits;
-    bool hasEnoughVisits = childVisits >= options.minVisitsToShow_
-      && (double)childVisits >= origVisits * options.minVisitsPropToShow_;
-    if(hasEnoughVisits)
-      break;
-    lastIdxWithEnoughVisits--;
-  }
-
-  int numChildrenToRecurseOn = numChildren;
-  if(options.maxChildrenToShow_ < numChildrenToRecurseOn)
-    numChildrenToRecurseOn = options.maxChildrenToShow_;
-  if(lastIdxWithEnoughVisits+1 < numChildrenToRecurseOn)
-    numChildrenToRecurseOn = lastIdxWithEnoughVisits+1;
-
-
   for(int i = 0; i<numChildren; i++) {
-    const SearchNode* child = analysisData[i].node;
-    Loc moveLoc = analysisData[i].move;
+      char buf[128];
 
-    if((depth >= options.branch_.size() && i < numChildrenToRecurseOn) ||
-       (depth < options.branch_.size() && moveLoc == options.branch_[depth]) ||
-       (depth < options.branch_.size() && options.alsoBranch_ && i < numChildrenToRecurseOn)
-    ) {
-      size_t oldLen = prefix.length();
-      string locStr = Location::toString(moveLoc,rootBoard);
-      if(locStr == "pass")
-        prefix += "pss";
-      else
-        prefix += locStr;
-      prefix += " ";
-      while(prefix.length() < oldLen+4)
-        prefix += " ";
-      int nextDepth = depth+1;
-      if(depth < options.branch_.size() && moveLoc != options.branch_[depth])
-        nextDepth = (int)options.branch_.size() + 1;
-      printTreeHelper(out,child,options,prefix,origVisits,nextDepth,analysisData[i], perspective);
-      prefix.erase(oldLen);
-    }
+      sprintf(buf, "%p", (void const*)&node);
+      out << buf;
+      out << ",";
+      
+      const SearchNode* child = analysisData[i].node;
+      sprintf(buf, "%p", (void const*)child);
+      out << buf;
+      out << "\n";
+
+      if (done.insert(child).second) { // only recurse if the node was new
+          int nextDepth = depth + 1;
+          printTreeHelper(out, child, options, prefix, origVisits, nextDepth, analysisData[i], perspective, done);
+      }
   }
 }
 

@@ -1,6 +1,7 @@
 #include "../program/playutils.h"
 
 #include <sstream>
+#include <iomanip>
 
 #include "../core/timer.h"
 #include "../core/test.h"
@@ -969,6 +970,18 @@ PlayUtils::BenchmarkResults PlayUtils::benchmarkSearchOnPositionsAndPrint(
     results.totalPositionsSearched += 1;
     results.totalSeconds += seconds;
     results.totalVisits += bot->getRootVisits();
+
+    std::time_t now_c = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&now_c), "%Y-%m%d-%H%M%S");
+    std::string filename = "tree-" + ss.str() + ".txt";
+    std::ofstream sout(filename);
+
+    Board::printBoard(sout, board, Board::NULL_LOC, &hist.moveHistory);
+    PrintTreeOptions options;
+    options = options.maxDepth(999);
+    options = options.maxChildrenToShow(999);
+    bot->printTree(sout, bot->rootNode, options, P_WHITE);
   }
 
   results.numNNEvals = nnEval->numRowsProcessed();

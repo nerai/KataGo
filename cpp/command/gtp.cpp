@@ -3103,7 +3103,9 @@ int MainCmds::gtp(const vector<string>& args) {
 
     else if(command == "debug_moves") {
       PrintTreeOptions options;
-      options = options.maxDepth(1);
+      options = options.maxDepth(999);
+      options = options.maxChildrenToShow(999);
+
       string printBranch;
       bool printRawStats = false;
       for(size_t i = 0; i<pieces.size(); i++) {
@@ -3126,7 +3128,12 @@ int MainCmds::gtp(const vector<string>& args) {
       }
       if(!responseIsError) {
         Search* search = engine->bot->getSearchStopAndWait();
-        ostringstream sout;
+
+        std::time_t now_c = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        std::stringstream ss;
+        ss << std::put_time(std::localtime(&now_c), "%Y-%m%d-%H%M%S");
+        std::string filename = "tree-" + ss.str() + ".txt";
+        std::ofstream sout(filename);
 
         Player pla = engine->bot->getRootPla();
         Board board = engine->bot->getRootBoard();
@@ -3147,7 +3154,7 @@ int MainCmds::gtp(const vector<string>& args) {
         if(printRawStats) {
           sout << engine->rawNNBrief(options.branch_, NNInputs::SYMMETRY_ALL);
         }
-        response = filterDoubleNewlines(sout.str());
+        response = "was printed to file";
       }
     }
     else if(command == "cputime" || command == "gomill-cpu_time") {

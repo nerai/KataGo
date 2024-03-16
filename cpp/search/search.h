@@ -650,7 +650,8 @@ private:
 
   void printTreeHelper(
     std::ostream& out, const SearchNode* node, const PrintTreeOptions& options,
-    std::string& prefix, int64_t origVisits, int depth, const AnalysisData& data, Player perspective
+    std::string& prefix, int64_t origVisits, int depth, const AnalysisData& data, Player perspective,
+      std::unordered_set<const SearchNode*>& done
   ) const;
 
   bool getSharpScoreHelper(
