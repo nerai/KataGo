@@ -1,3 +1,15 @@
+# CHANGES in this branch:
+
+It will print the search tree to a text file after each `benchmark` part or, alternatively, if you use the `debug_moves` command in GTP.
+I don't remember if I tested the latter.
+
+The tree is in a machine-readable format for easy processing.
+It contains *just the structure of the tree* (node relationships), nothing else, in particular no board state or moves.
+It would be easy to add these, tho.
+
+---
+
+
 # KataGo
 
 * [Overview](#overview)
