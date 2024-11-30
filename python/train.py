@@ -273,19 +273,17 @@ def main(rank: int, world_size: int, args, multi_gpu_device_ids, readpipes, writ
         if not lr_scale_auto:
             return 1.0
 
-        if train_state["global_step_samples"] < 200_000_000:
+        if train_state["global_step_samples"] <  600_000_000:
             return 8.00
-        if train_state["global_step_samples"] < 400_000_000:
+        if train_state["global_step_samples"] < 1500_000_000:
+            return 6.00
+        if train_state["global_step_samples"] < 2500_000_000:
             return 4.00
-        if train_state["global_step_samples"] < 500_000_000:
+        if train_state["global_step_samples"] < 3500_000_000:
+            return 3.00
+        if train_state["global_step_samples"] < 4500_000_000:
             return 2.00
-        if train_state["global_step_samples"] < 550_000_000:
-            return 1.00
-        if train_state["global_step_samples"] < 600_000_000:
-            return 0.50
-        if train_state["global_step_samples"] < 650_000_000:
-            return 0.25
-        return 0.25
+        return 2.00
 
     def get_checkpoint_path():
         return os.path.join(traindir,"checkpoint.ckpt")
